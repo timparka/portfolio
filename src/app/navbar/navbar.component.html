@@ -1,0 +1,96 @@
+<nav class="w-full fixed top-0 bg-indigo-100 nav dark:bg-slate-700 z-10">
+    <div class="container mx-auto py-5 flex items-center justify-between">
+        <div id="port" class="flex items-center gap-2 z-50">
+            <img class="w-10 cursor-pointer" src="assets/htmlicon.jpg" alt="" (click)="goToHome()">
+            <span class="text-2xl font-bold text-indigo-900 dark:text-white cursor-pointer" (click)="goToHome()">TimParka</span>
+        </div>
+        <ul class="hidden md:flex space-x-10 text-gray-600 dark:text-gray-100 font-bold text-sm uppercase hover:cursor-pointer">
+            <li class="hover:text-gray-500">
+                <a (click)="navigateSmooth('home')">homepage</a>
+            </li>
+            <li class="hover:text-gray-500">
+                <a (click)="navigateSmooth('about')">about</a>
+            </li>
+            <li class="hover:text-gray-500">
+                <a (click)="navigateSmooth('skills')">skills</a>
+            </li>
+            <li class="hover:text-gray-500">
+                <a (click)="navigateSmooth('projects')">projects</a>
+            </li>
+            <li class="hover:text-gray-500">
+                <a (click)="navigateSmooth('contact')">contact</a>
+            </li>
+        </ul>
+        <div class="relative hidden md:block z-50" (click)="toggleDark()">
+            <div class="w-12 h-6 bg-gray-300 rounded-full cursor-pointer"></div>
+            <div [class.bg-blue-500]="darkMode" class="w-6 h-6 bg-white dark:bg-gray-500 rounded-full absolute top-0 left-0 transition-all duration-300 ease-in-out transform" [class.translate-x-6]="darkMode"></div>
+        </div>          
+        <div class="flex items-center md:hidden">
+            <div class="cursor-pointer mr-4" (click)="toggleDark()">
+                <img *ngIf="darkMode; else lightMode" src="assets/Sun (2).png" alt="Toggle Dark Mode" class="w-6 h-6" />
+                <ng-template #lightMode>
+                    <img src="assets/crescent-moon.png" alt="Toggle Light Mode" class="w-6 h-6 bg-indigo-100" />
+                </ng-template>
+            </div>
+            
+            <div id="hamburger"
+                class="space-y-1 md:hidden cursor-pointer z-50 pr-1"
+                (click)="toggleMenu()"
+                [ngClass]="{ 'dark:bg-[#0a192f]': darkMode && openMenu, 'bg-yourColorWhenClosed': !darkMode || !openMenu}">
+                <fa-icon [icon]="openMenu ? faTimes : faBars" class="text-black dark:text-white"></fa-icon>
+            </div>
+        </div>
+        
+        <ul
+        [ngClass]="{
+            hidden: !openMenu,
+            'absolute top-0 left-0 w-full h-screen flex flex-col justify-center items-center': openMenu,
+            'bg-[#0a192f] text-gray-300': darkMode && openMenu,
+            'bg-white text-black': !darkMode && openMenu
+        }"
+        >
+            <li class="py-6 text-4xl" (click)="toggleMenu()">
+            <a [routerLink]="'home'" fragment="home" (click)="navigateSmooth('home')">HOME</a>
+            </li>
+            <li class="py-6 text-4xl" (click)="toggleMenu()">
+            <a [routerLink]="'about'" fragment="about" (click)="navigateSmooth('about')">ABOUT</a>
+            </li>
+            <li class="py-6 text-4xl" (click)="toggleMenu()">
+            <a [routerLink]="'skills'" fragment="skills" (click)="navigateSmooth('skills')">SKILLS</a>
+            </li>
+            <li class="py-6 text-4xl" (click)="toggleMenu()">
+            <a [routerLink]="'projects'" fragment="projects" (click)="navigateSmooth('projects')">PROJECTS</a>
+            </li>
+            <li class="py-6 text-4xl" (click)="toggleMenu()">
+            <a [routerLink]="'contact'" fragment="contact" (click)="navigateSmooth('contact')">CONTACT</a>
+            </li>
+        </ul>
+        <div class='hidden lg:flex fixed flex-col top-[35%] right-0'>
+            <ul>
+                <li class='w-[160px] h-[60px] flex justify-start items-center mr-[-100px] duration-300 bg-blue-600 transform hover:translate-x-[-90px]'>
+                    <a class='flex justify-start items-center w-full text-gray-300 pl-3' href="https://www.linkedin.com/in/timpark97/">
+                        <i class="fa fa-linkedin fa-2x pl-1 mr-7" aria-hidden="true"></i>LinkedIn
+                    </a>
+                </li>
+                <li class='w-[160px] h-[60px] flex justify-start items-center mr-[-100px] duration-300 bg-[#333333] transform hover:translate-x-[-90px]'>
+                    <a class='flex justify-start items-center w-full text-gray-300 pl-3' href="https://github.com/timparka">
+                        <i class="fa fa-github fa-2x pl-1 mr-7" aria-hidden="true"></i>GitHub
+                    </a>
+                </li>
+                <li class='w-[160px] h-[60px] flex justify-start items-center mr-[-100px] duration-300 bg-[#6fc2b0] transform hover:translate-x-[-90px]'>
+                    <a class='flex justify-start items-center w-full text-gray-300 pl-3' href='/'>
+                        <i class="fa fa-envelope fa-2x pl-0.5 mr-7" aria-hidden="true"></i>E-mail
+                    </a>
+                </li>
+                <li class='w-[160px] h-[60px] flex justify-start items-center mr-[-100px] duration-300 bg-[#565f69] transform hover:translate-x-[-90px]'>
+                    <a class='flex justify-start items-center w-full text-gray-300 pl-3' href='/'>
+                        <i class="fa fa-user fa-2x pl-1.5 mr-7" aria-hidden="true"></i>Resume
+                    </a>
+                </li>
+            </ul>
+        </div>
+        
+        
+        
+    </div>
+  </nav>
