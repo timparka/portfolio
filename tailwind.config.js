@@ -18,7 +18,7 @@ module.exports = {
       sm:"640px",
       md:"768px",
       lg:"1280px",
-      xl:"2560px",
+      xl:"2000px",
     },
     fontFamily:{
       nunito:['Nunito', 'sans-serif']
