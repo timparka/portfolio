@@ -10,14 +10,15 @@ module.exports = {
   theme: {
     extend: {
       spacing:{
-        "big":"48rem"
+        "big":"48rem",
+        "small":"36rem",
       }
     },
     screens:{
       sm:"640px",
       md:"768px",
       lg:"1280px",
-      xl:"1920px",
+      xl:"2560px",
     },
     fontFamily:{
       nunito:['Nunito', 'sans-serif']
