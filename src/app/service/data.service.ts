@@ -15,9 +15,9 @@ export class DataService {
     {
       id: 2,
       name: "Angular Springboot League of Legends Application",
-      image: "assets/offmeta.jpg",
+      image: "assets/offmetafe.jpg",
       github: "https://github.com/timparka/Off-Meta",
-      live: "",
+      live: "http://timparkaoffmetafe.s3-website-us-east-1.amazonaws.com/",
     },
     {
       id: 3,
