@@ -21,14 +21,14 @@ export class DataService {
     },
     {
       id: 3,
-      name: "Angular Dad's Church Website",
+      name: "",
       image: "",
       github: "",
       live: "",
     },
     {
       id: 4,
-      name: "LLM Tokenizer",
+      name: "",
       image: "",
       github: "",
       live: "",
